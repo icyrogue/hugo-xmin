@@ -6,6 +6,9 @@
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" />
+    {{ if eq .Params.Hidden true }}
+    <meta name="robots" content="noindex">
+    {{ end }}
     {{ partial "head_custom.html" . }}
   </head>
 
